@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sintia Baez's Portafolio</title>
     <meta name="description" content="Sintia Baez's Portafolio" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +11,7 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap"
-      rel="stylesheet"
+      rel="stylesheet"/>
      
     <meta name="author" content="Sintia Baez" />
     <link rel="stylesheet" href="css/index.css" />
@@ -21,7 +21,7 @@
         color: rgb(80, 3, 62);
       }
       section {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         padding: 20px;
       }
       #About {
@@ -42,6 +42,8 @@
       }
 
       nav {
+        position: sticky;
+        top: 0px;
         background-color: rgb(223, 19, 148);
         padding: 10px;
         margin-bottom: 20px;
@@ -55,13 +57,31 @@
       nav a:hover {
         background-color: rgba(139, 15, 73, 0.553);
       }
+nav ul li {
+  list-style-type: none;
+  padding: 0%;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+}
+html {
+  scroll-behavior: smooth;
+}
+
     </style>
   </head>
   <body>
     <nav>
-      <a href="#About">About</a>
-      <a href="#Experience">Experience</a>
-      <a href="#Connect">Connect</a>
+    <ul> 
+      <li><a href="#About">About</a></li>
+      <li><a href="#Skills">Skills</a></li>
+      <li><a href="#Projects">Projects</a></li>
+      <li><a href="#Experience">Experience</a></li>
+      <li><a href="#Connect">Connect</a></li>
+    </ul>
     </nav>
     <h1>Sintia Baez</h1>
     <section id="About">
@@ -71,29 +91,45 @@
         the Philadelphia Philies. I love coding and it is pretty amazing to have
         this opportunity to learn how to do it.
       </p>
+      <section id="Skills">
+        <h2>Skills</h2> 
     </section>
+    <section id="Projects">
+      <h2>Projects</h2> 
+      <ul></ul>
+  </section>
     <section id="Experience">
       <h2>Experience</h2>
       <ul>
-        <li>HawkEye</li>
-        <li>TrackMan</li>
-        <li>Bats</li>
-        <li>Edgertronic</li>
-        <li>Rapsodo</li>
+        <li> 
+          <div class="job-info"> 
+            <span class="job-title">Assistant, Video and Technology</span>
+            <span class="job-dates">2020 - Present</span>
+          </div>
+          <p class="job-description">
+            Oversee the daily video, sports technology, and advance scouting operations at a minor league affiliate. Duties includes, filming and logging home and road games, as well as assisting in daily instructional film/data review sessions with coaches, players, and staff. In addition I'm responsible for maintaining all sports technology equipment including setup, logging, and uploading all data each day. using technology like HawkEye, TrackMan, Bats, Edgertronic, Rapsodo etc.
+          </p>
+    </li>
+    <li>
+      <div class="job-info"> 
+            <span class="job-title">TrackMan Operator</span>
+            <span class="job-dates">2019 - 2020</span>
+          </div>
+          <p class="job-description">
+            Operate TrackMan in everygame and help recollecting data during bullpens and BP.
+            </p>
+    </li>
+
       </ul>
     </section>
     <section id="Connect">
-      <h2>Connect</h2>
-      <ul>
-        <li><a href="https://github.com/SintiaBaez"><i class="fa-brands fa-github"></i>
-        <li>
-          <a href="https://www.linkedin.com/in/sintiabaez/"><i class="fab fa-linkedin"></i></a></li>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/sintiabaez/?hl=en"><i class="fab fa-instagram"></i></a></li></a>
-        </li>
-        <li><a href="https://x.com/sintiabaez"><i class="fab fa-twitter"></i></a></li></a>
-      </ul>
-    </section>
+        <h2>Connect</h2>
+        <ul>
+          <li><a href="https://github.com/SintiaBaez" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/sintiabaez/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/sintiabaez/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://x.com/sintiabaez" target=""><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </section>
   </body>
 </html>
