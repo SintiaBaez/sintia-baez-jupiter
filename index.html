@@ -8,17 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap"
-      rel="stylesheet"/>
-     
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="author" content="Sintia Baez" />
     <link rel="stylesheet" href="css/index.css" />
     <style>
+      /* Mobile first style (default) */
+
       body {
-        background-color: rgb(246, 207, 232);
+        background-color: rgb(245, 221, 236);
         color: rgb(80, 3, 62);
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        padding-top: 5px;
       }
       section {
         margin-bottom: 40px;
@@ -26,9 +36,10 @@
       }
       #About {
         text-align: center;
+        font-size: 18px;
       }
       h1 {
-        font-size: 30px;
+        font-size: 24px;
         letter-spacing: 2px;
         font-weight: bold;
         color: rgb(223, 19, 148);
@@ -37,51 +48,134 @@
       }
       h2 {
         font-weight: 600;
-        font-size: 30px;
+        font-size: 24px;
         margin-top: 15px;
       }
 
+      /* Navigation */
       nav {
         position: sticky;
         top: 0px;
         background-color: rgb(223, 19, 148);
-        padding: 10px;
+        padding: 8px 10px;
         margin-bottom: 20px;
+        z-index: 10;
       }
       nav a {
         color: rgb(236, 236, 234);
         text-decoration: none;
-        padding: 10px 15px;
+        padding: 8px 12px;
         margin: 0 10px;
+        font-weight: bold;
+        font-size: 14px;
       }
       nav a:hover {
         background-color: rgba(139, 15, 73, 0.553);
+        color: white;
       }
-nav ul li {
-  list-style-type: none;
-  padding: 0%;
-  margin: 0;
-  text-align: center;
-}
+      nav ul li {
+        list-style-type: none;
+        padding: 0%;
+        margin: 0;
+        text-align: center;
+      }
 
-nav ul li {
-  display: inline-block;
-}
-html {
-  scroll-behavior: smooth;
-}
+      nav ul li {
+        display: inline-block;
+      }
 
+      /* Smooth scrolling*/
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Dark mode button style */
+      #dark-mode-toggle {
+        background: none;
+        border: none;
+        color: rgb(80, 3, 62);
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+        #dark-mode-toggle:hover {
+          color: rgb(223, 19, 148);
+        }
+      }
+
+      /* Tablet style*/
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        h1 {
+          font-size: 28px;
+          color: rgb(203, 3, 109);
+        }
+        h2 {
+          font-size: 26px;
+          color: rgb(200, 20, 130);
+        }
+        section {
+          padding: 25px;
+        }
+        nav a {
+          font-size: 16px;
+          padding: 12px 18px;
+        }
+        nav ul li {
+          display: inline-block;
+          margin-right: 20px;
+        }
+        #About {
+          font-size: 16px;
+          padding: 10px 50px;
+        }
+      }
+      /* Desktop style */
+      @media screen and (min-width: 1025px) {
+        h1 {
+          font-size: 32px;
+          letter-spacing: 3px;
+          color: rgb(153, 0, 122);
+        }
+        h2 {
+          font-size: 30px;
+          color: rgb(163, 18, 156);
+        }
+        section {
+          padding: 30px;
+        }
+        nav a {
+          font-size: 18px;
+          padding: 12px 20px;
+        }
+        nav ul li {
+          margin: 18px;
+        }
+        #About {
+          font-size: 18px;
+          padding: 20px 70px;
+        }
+        #Experience .job-info {
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+        #Experience .job-description {
+          font-size: 16px;
+          line-height: 1.8;
+        }
+      }
     </style>
   </head>
   <body>
+    <button id="dark-mode-toggle">🌙Dark Mode</button>
     <nav>
-    <ul> 
-      <li><a href="#About">About</a></li>
-      <li><a href="#Skills">Skills</a></li>
-      <li><a href="#Projects">Projects</a></li>
-      <li><a href="#Experience">Experience</a></li>
-      <li><a href="#Connect">Connect</a></li>
-    </ul>
+      <ul>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Experience">Experience</a></li>
+        <li><a href="#Connect">Connect</a></li>
+      </ul>
     </nav>
     <h1>Sintia Baez</h1>
     <section id="About">
@@ -91,45 +185,89 @@ html {
         the Philadelphia Philies. I love coding and it is pretty amazing to have
         this opportunity to learn how to do it.
       </p>
-      <section id="Skills">
-        <h2>Skills</h2> 
+    </section>
+    <section id="Skills">
+      <h2>Skills</h2>
     </section>
     <section id="Projects">
-      <h2>Projects</h2> 
+      <h2>Projects</h2>
       <ul></ul>
-  </section>
+    </section>
     <section id="Experience">
       <h2>Experience</h2>
       <ul>
-        <li> 
-          <div class="job-info"> 
+        <li>
+          <div class="job-info">
             <span class="job-title">Assistant, Video and Technology</span>
             <span class="job-dates">2020 - Present</span>
           </div>
           <p class="job-description">
-            Oversee the daily video, sports technology, and advance scouting operations at a minor league affiliate. Duties includes, filming and logging home and road games, as well as assisting in daily instructional film/data review sessions with coaches, players, and staff. In addition I'm responsible for maintaining all sports technology equipment including setup, logging, and uploading all data each day. using technology like HawkEye, TrackMan, Bats, Edgertronic, Rapsodo etc.
+            Oversee the daily video, sports technology, and advance scouting
+            operations at a minor league affiliate. Duties includes, filming and
+            logging home and road games, as well as assisting in daily
+            instructional film/data review sessions with coaches, players, and
+            staff. In addition I'm responsible for maintaining all sports
+            technology equipment including setup, logging, and uploading all
+            data each day. using technology like HawkEye, TrackMan, Bats,
+            Edgertronic, Rapsodo etc.
           </p>
-    </li>
-    <li>
-      <div class="job-info"> 
+        </li>
+        <li>
+          <div class="job-info">
             <span class="job-title">TrackMan Operator</span>
             <span class="job-dates">2019 - 2020</span>
           </div>
           <p class="job-description">
-            Operate TrackMan in everygame and help recollecting data during bullpens and BP.
-            </p>
-    </li>
-
+            Operate TrackMan in everygame and help recollecting data during
+            bullpens and BP.
+          </p>
+        </li>
       </ul>
     </section>
     <section id="Connect">
-        <h2>Connect</h2>
-        <ul>
-          <li><a href="https://github.com/SintiaBaez" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/sintiabaez/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://www.instagram.com/sintiabaez/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="https://x.com/sintiabaez" target=""><i class="fab fa-twitter"></i></a></li>
-        </ul>
-      </section>
+      <h2>Connect</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/SintiaBaez" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/sintiabaez/" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/sintiabaez/?hl=en" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://x.com/sintiabaez" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+      </ul>
+    </section>
+    <script>
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      if (localStorage.getItem("dark-mode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkModeToggle.textContent = "🌞 Light Mode";
+      }
+
+      darkModeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        /* If dark mode is enabled, change button text to "Light Mode"*/
+        if (document.body.classList.contains("dark-mode")) {
+          darkModeToggle.textContent = "🌞 Light Mode";
+          localStorage.setItem("dark-mode", "enabled");
+        } else {
+          darkModeToggle.textContent = "🌙 Dark Mode";
+          localStorage.removeItem("dark-mode");
+        }
+      });
+    </script>
   </body>
 </html>
