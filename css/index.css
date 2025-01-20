@@ -21,11 +21,32 @@
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: glow 2s infinite alternate;
 }
 #Experience li:hover {
   background-color: #f9cde5;
   color: white;
   transform: translateY(-5px);
+  animation: hoverGlow 1s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    box-shadow: 0px 4px 6px rgba(195, 8, 111, 0.2);
+  }
+  to {
+    box-shadow: 0px 4px 20px rgba(255, 121, 198, 0.8);
+  }
+}
+/* Enhace glow on hover*/
+@keyframes hoverGlow {
+  from {
+    box-shadow: 0px 4px 10px rgba(255, 121, 198, 0.6);
+  }
+  to {
+    box-shadow: 0px 4px 25px rgba(255, 121, 198, 1);
+  }
 }
 #Experience .job-info {
   display: flex;
@@ -39,6 +60,22 @@
   font-size: 15px;
   color: black;
 }
+#Skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+#Skills li {
+  background-color: rgb(223, 19, 148);
+  color: #f0f0f0;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 #Connect {
   margin-bottom: 30px;
@@ -46,7 +83,7 @@
 }
 #Connect h2 {
   font-size: 30px;
-  color: #c3086f;
+  color: rgb(80, 3, 62);
   margin-bottom: 20px;
 }
 #Connect ul {
@@ -54,7 +91,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax) (60px, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   justify-content: center;
   gap: 15px;
 }
@@ -73,12 +110,13 @@
 #Connect a:hover {
   color: white;
   transform: scale(1.1);
+  transition: transform 0.3 ease, background-color 0.3 ease;
 }
 
 /* DARK MODE STYLES*/
 body.dark-mode {
-  background-color: rgb(30, 30, 30);
-  color: white;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
 nav {
@@ -86,14 +124,39 @@ nav {
 }
 
 body.dark-mode nav {
-  background-color: rgb(50, 50, 50);
+  background-color: #2b2b2b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+body.dark-mode #Experience li {
+  background-color: #2b2b2b;
+  border-color: #ff79c6;
+  color: #e0e0e0;
+}
+body.dark-mode #Experience li:hover {
+  background-color: #a9a9a9;
+  transform: translateY(-5px);
+}
+body.dark-mode #Skills li {
+  background-color: #ff79c6;
+  color: #1e1e1e;
+}
+body.dark-mode #Connect h2 {
+  color: #ff79c6;
+}
+body.dark-mode #Connect li {
+  background-color: #3b3b3b;
+}
+body.dark-mode #Connect a:hover {
+  color: rgb(255, 255, 255);
+  background-color: #ff79c6;
+  transform: scale(1.1);
+}
 button {
+  background-color: #6272a4;
   cursor: pointer;
   padding: 10px 15px;
   font-size: 16px;
-  background-color: rgb(223, 19, 148);
   color: white;
   border: none;
   border-radius: 5px;
@@ -101,5 +164,5 @@ button {
 }
 
 button:hover {
-  background-color: rgb(126, 8, 63);
+  background-color: #44475a;
 }
