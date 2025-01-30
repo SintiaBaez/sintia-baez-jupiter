@@ -1,3 +1,19 @@
+h1 {
+  margin-left: 15px;
+}
+nav a:active {
+  background-color: #ff79c6;
+  color: #ffff;
+  transform: scale(1.05);
+  transition: transform 0.1 ease;
+  background-color: 0.2 ease;
+}
+nava:hover {
+  color: white;
+  background-color: #c3086f;
+  transform: scale(1.05);
+  transition: transform 0.3 ease, background-color 0.3;
+}
 #Experience {
   margin-bottom: 30px;
   display: grid;
@@ -33,19 +49,19 @@
 /* Glow animation */
 @keyframes glow {
   from {
-    box-shadow: 0px 4px 6px rgba(195, 8, 111, 0.2);
+    box-shadow: 0px 4px 6px rgb(255, 121, 198, 0.1);
   }
   to {
-    box-shadow: 0px 4px 20px rgba(255, 121, 198, 0.8);
+    box-shadow: 0px 4px 20px rgba(255, 121, 198, 0.5);
   }
 }
 /* Enhace glow on hover*/
 @keyframes hoverGlow {
   from {
-    box-shadow: 0px 4px 10px rgba(255, 121, 198, 0.6);
+    box-shadow: 0px 4px 10px rgba(255, 121, 198, 0.4);
   }
   to {
-    box-shadow: 0px 4px 25px rgba(255, 121, 198, 1);
+    box-shadow: 0px 4px 25px rgba(255, 121, 198, 0.8);
   }
 }
 #Experience .job-info {
@@ -131,6 +147,11 @@ body.dark-mode nav {
   background-color: #2b2b2b;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+body.dark-mode nav a:hover {
+  background-color: #e0a0c4;
+  color: #1e1e1e;
+  border-radius: 5px;
+}
 
 body.dark-mode #Experience li {
   background-color: #2b2b2b;
@@ -138,23 +159,45 @@ body.dark-mode #Experience li {
   color: #e0e0e0;
 }
 body.dark-mode #Experience li:hover {
-  background-color: #a9a9a9;
+  background-color: #3b3b3b;
+  color: #f0f0f0;
   transform: translateY(-5px);
 }
 body.dark-mode #Skills li {
   background-color: #ff79c6;
   color: #1e1e1e;
 }
-body.dark-mode #Connect h2 {
-  color: #ff79c6;
+body.dark-mode h1 {
+  color: #c3086f;
+}
+body.dark-mode #Connect h2,
+body.dark-mode #Skills h2,
+body.dark-mode #Experience h2,
+body.dark-mode #Projects h2,
+body.dark-mode #LeaveMessage h2,
+body.dark-mode #About h2,
+body.dark-mode #messages h2 {
+  color: #ffb3d9;
+  text-shadow: 2px 2px 8px rgba(120, 52, 90, 0.4);
 }
 body.dark-mode #Connect li {
   background-color: #3b3b3b;
 }
 body.dark-mode #Connect a:hover {
-  color: rgb(255, 255, 255);
+  color: #ffdbf3;
   background-color: #ff79c6;
   transform: scale(1.1);
+}
+body.dark-mode button {
+  background-color: #c3086f;
+  border: 1px solid #ff79c6;
+}
+body.dark-mode form {
+  background-color: #2b2b2b;
+  border: 1px solid #d7d3d3;
+}
+body.dark-mode form label {
+  color: #9f9797;
 }
 button {
   background-color: rgb(223, 19, 148);
@@ -219,6 +262,19 @@ form button {
   transition: background-color 0.3s ease;
 }
 
+#messages button {
+  font-size: 12px;
+  padding: 5px 8px;
+  margin-left: 5px;
+  border-radius: 4px;
+  background-color: #ff79c6;
+  color: white;
+  border: none;
+  transition: background-color 0.3 ease;
+}
+#messages button:hover {
+  background-color: #c3086f;
+}
 form button:hover {
   background-color: #ff79c6;
 }

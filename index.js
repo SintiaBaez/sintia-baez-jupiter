@@ -31,7 +31,6 @@ footer.style.backgroundColor = "#f1f1f1";
 //currecnt year//
 const today = new Date();
 const thisYear = today.getFullYear();
-
 //copyright p
 const copyright = document.createElement("p");
 copyright.innerHTML = `&copy; ${thisYear} Sintia Baez`;
@@ -72,7 +71,7 @@ messageForm.addEventListener("submit", function (event) {
   editButton.setAttribute("type", "button");
   editButton.addEventListener("click", function () {
     const updateMessage = prompt("Edit your message:", userMessage);
-    if (updatedMessage !== null) {
+    if (updateMessage !== null) {
       newMessage.querySelector("span").innerText = updatedMessage;
     }
   });
