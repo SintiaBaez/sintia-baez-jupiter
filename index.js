@@ -72,7 +72,7 @@ messageForm.addEventListener("submit", function (event) {
   editButton.addEventListener("click", function () {
     const updateMessage = prompt("Edit your message:", userMessage);
     if (updateMessage !== null) {
-      newMessage.querySelector("span").innerText = updatedMessage;
+      newMessage.querySelector("span").innerText = updateMessage;
     }
   });
 
@@ -83,3 +83,45 @@ messageForm.addEventListener("submit", function (event) {
   messageList.appendChild(newMessage);
   messageForm.reset();
 });
+//github//
+const GITHUB_USERNAME = "SintiaBaez";
+//Fetch using GitHub API
+fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(
+        `GitHub API error: ${response.status} ${response.statusText}`
+      );
+    }
+    return response.json();
+  })
+  .then((repositories) => {
+    const projectSection = document.querySelector("#Projects");
+    const projectList = projectSection.querySelector("ul");
+    if (!projectList) {
+      console.log("#Projects ul element not found in the DOM.");
+      return;
+    }
+    if (repositories.length === 0) {
+      projectList.innerHTML = "<li>No repositories found.</li>";
+      return;
+    }
+
+    for (let i = 0; i < repositories.length; i++) {
+      const listItem = document.createElement("li");
+      const repoLink = document.createElement("a");
+      repoLink.href = repositories[i].html_url;
+      repoLink.target = "_blank";
+      repoLink.innerText = repositories[i].name;
+
+      listItem.appendChild(repoLink);
+      projectList.appendChild(listItem);
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching repositories:", error);
+    const repoList = document.getElementById("repo-list");
+    if (repoList) {
+      repoList.innerHTML = `<li style="color: red;">Error loading repositories. Please try again later.</li>`;
+    }
+  });

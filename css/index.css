@@ -1,21 +1,51 @@
 h1 {
   margin-left: 15px;
 }
-nav a:active {
-  background-color: #ff79c6;
-  color: #ffff;
-  transform: scale(1.05);
-  transition: transform 0.1 ease;
-  background-color: 0.2 ease;
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: sticky;
+  background-color: rgb(190, 211, 199);
+  z-index: 20;
+  transition: background-color 0.3s ease;
 }
-nava:hover {
+nav:hover {
+  background-color: rgb(39, 111, 69);
+}
+nav a {
+  color: rgb(236, 236, 234);
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+nav a:active {
+  background-color: rgb(190, 211, 199, 0.5);
   color: white;
-  background-color: #c3086f;
-  transform: scale(1.05);
-  transition: transform 0.3 ease, background-color 0.3;
+  border-radius: 5px;
+}
+nav a:hover {
+  color: #2a6b3d;
+}
+nav:hover a {
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+section {
+  margin-top: 10px;
+}
+#About {
+  padding-top: 30px;
+  margin-top: 10px;
 }
 #Experience {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -29,7 +59,7 @@ nava:hover {
   display: flex;
   flex-direction: column;
   background-color: #f0f0f0;
-  border: 2px solid #c3086f;
+  border: 2px solid rgb(42, 98, 61);
   padding: 15px;
   font-size: 18px;
   font-weight: bold;
@@ -40,7 +70,7 @@ nava:hover {
   animation: glow 2s infinite alternate;
 }
 #Experience li:hover {
-  background-color: #f9cde5;
+  background-color: rgb(190, 211, 199);
   color: white;
   transform: translateY(-5px);
   animation: hoverGlow 1s infinite alternate;
@@ -49,19 +79,19 @@ nava:hover {
 /* Glow animation */
 @keyframes glow {
   from {
-    box-shadow: 0px 4px 6px rgb(255, 121, 198, 0.1);
+    box-shadow: 0px 4px 6px rgba(190, 211, 199, 0.4);
   }
   to {
-    box-shadow: 0px 4px 20px rgba(255, 121, 198, 0.5);
+    box-shadow: 0px 4px 20px rgba(27, 77, 48, 0.5);
   }
 }
 /* Enhace glow on hover*/
 @keyframes hoverGlow {
   from {
-    box-shadow: 0px 4px 10px rgba(255, 121, 198, 0.4);
+    box-shadow: 0px 4px 10px rgba(190, 211, 199, 0.4);
   }
   to {
-    box-shadow: 0px 4px 25px rgba(255, 121, 198, 0.8);
+    box-shadow: 0px 4px 25px rgba(27, 77, 48, 0.5);
   }
 }
 #Experience .job-info {
@@ -84,7 +114,7 @@ nava:hover {
   padding: 0;
 }
 #Skills li {
-  background-color: rgb(223, 19, 148);
+  background-color: rgb(26, 71, 42);
   color: #f0f0f0;
   padding: 8px 15px;
   border-radius: 5px;
@@ -92,14 +122,47 @@ nava:hover {
   font-size: 16px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+#Projects {
+  padding: 20px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+#Projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+#Projects ul li {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3 ease, box-shadow 0.3 ease;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+#Project ul li a {
+  color: #2d3d44;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#Projects ul li a:hover {
+  color: #0a549f;
+}
 #Connect {
+  margin-top: 10px;
   margin-bottom: 30px;
   text-align: center;
 }
 #Connect h2 {
   font-size: 30px;
-  color: rgb(80, 3, 62);
+  color: rgb(26, 71, 42);
   margin-bottom: 20px;
 }
 #Connect ul {
@@ -108,23 +171,30 @@ nava:hover {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  justify-content: center;
   gap: 15px;
 }
 #Connect li {
   display: inline-block;
+  text-align: center;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 
 #Connect a {
-  color: #c3086f;
+  color: rgb(141, 136, 136);
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  margin: 0;
   font-size: 24px;
   text-decoration: none;
-  transition: transform 0.3 ease, background-color 0.3 ease;
+  transition: transform 0.3 ease, background-color 0.3 ease, box-shadow 0.3 ease;
+}
+#Connect a:active {
+  box-shadow: 0 0 15px rgba(39, 111, 69, 1);
 }
 #Connect a:hover {
-  color: white;
+  color: rgba(39, 111, 69, 1);
   transform: scale(1.1);
   transition: transform 0.3 ease, background-color 0.3 ease;
 }
@@ -136,39 +206,32 @@ nava:hover {
 /* DARK MODE STYLES*/
 body.dark-mode {
   background-color: #1e1e1e;
-  color: #e0e0e0;
 }
-
-nav {
-  background-color: rgb(223, 19, 148);
-}
-
 body.dark-mode nav {
-  background-color: #2b2b2b;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgb(5, 44, 27);
 }
 body.dark-mode nav a:hover {
-  background-color: #e0a0c4;
+  background-color: rgb(39, 111, 69);
   color: #1e1e1e;
   border-radius: 5px;
 }
 
-body.dark-mode #Experience li {
-  background-color: #2b2b2b;
-  border-color: #ff79c6;
-  color: #e0e0e0;
+body.dark-mode #Ex erience li {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(42, 98, 61);
+  color: #f0f0f0;
 }
 body.dark-mode #Experience li:hover {
-  background-color: #3b3b3b;
+  background-color: rgb(190, 211, 199);
   color: #f0f0f0;
   transform: translateY(-5px);
 }
 body.dark-mode #Skills li {
-  background-color: #ff79c6;
-  color: #1e1e1e;
+  background-color: rgb(26, 71, 42);
+  color: #ffffff;
 }
 body.dark-mode h1 {
-  color: #c3086f;
+  color: 170, 170, 170;
 }
 body.dark-mode #Connect h2,
 body.dark-mode #Skills h2,
@@ -177,20 +240,20 @@ body.dark-mode #Projects h2,
 body.dark-mode #LeaveMessage h2,
 body.dark-mode #About h2,
 body.dark-mode #messages h2 {
-  color: #ffb3d9;
-  text-shadow: 2px 2px 8px rgba(120, 52, 90, 0.4);
+  color: rgb(170, 170, 170);
 }
 body.dark-mode #Connect li {
-  background-color: #3b3b3b;
+  background-color: #1e1e1e;
 }
+
 body.dark-mode #Connect a:hover {
-  color: #ffdbf3;
-  background-color: #ff79c6;
+  color: rgb(190, 211, 199);
+  background-color: rgb(103, 154, 124);
   transform: scale(1.1);
 }
 body.dark-mode button {
-  background-color: #c3086f;
-  border: 1px solid #ff79c6;
+  background-color: rgb(27, 77, 48);
+  border: 1px solid rgb(103, 154, 124);
 }
 body.dark-mode form {
   background-color: #2b2b2b;
@@ -200,7 +263,7 @@ body.dark-mode form label {
   color: #9f9797;
 }
 button {
-  background-color: rgb(223, 19, 148);
+  background-color: rgb(103, 154, 124);
   cursor: pointer;
   padding: 10px 15px;
   font-size: 16px;
@@ -211,7 +274,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff79c6;
+  background-color: rgb(190, 211, 199);
 }
 
 form {
@@ -242,8 +305,8 @@ form textarea {
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: rgb(223, 19, 148);
-  box-shadow: 0 0 8px #ff79c6;
+  border-color: rgb(27, 77, 48);
+  box-shadow: 0 0 8px rgb(190, 211, 199);
 }
 
 form textarea {
@@ -253,7 +316,7 @@ form textarea {
 form button {
   width: 18%;
   padding: 12px;
-  background-color: rgb(223, 19, 148);
+  background-color: rgb(27, 77, 48);
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -267,20 +330,20 @@ form button {
   padding: 5px 8px;
   margin-left: 5px;
   border-radius: 4px;
-  background-color: #ff79c6;
+  background-color: rgb(103, 154, 124);
   color: white;
   border: none;
   transition: background-color 0.3 ease;
 }
 #messages button:hover {
-  background-color: #c3086f;
+  background-color: rgb(27, 77, 48);
 }
 form button:hover {
-  background-color: #ff79c6;
+  background-color: rgb(103, 154, 124);
 }
 
 form button:active {
-  background-color: #f9cde5;
+  background-color: rgb(190, 211, 199);
 }
 
 /* mobile*/
@@ -289,7 +352,15 @@ form button:active {
     padding: 20px;
     margin: 10px;
   }
-
+  #Projects ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  #Projects ul li {
+    width: 90%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
   form input,
   form textarea,
   form button {
