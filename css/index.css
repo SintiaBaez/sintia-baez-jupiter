@@ -14,6 +14,7 @@ nav:hover {
 }
 nav a {
   color: rgb(236, 236, 234);
+  font-size: 30px;
   text-decoration: none;
   padding: 8px 12px;
   margin: 0 10px;
@@ -43,6 +44,7 @@ section {
 #About {
   padding-top: 30px;
   margin-top: 10px;
+  margin-top: none;
 }
 #Experience {
   margin-bottom: 20px;
@@ -123,12 +125,15 @@ section {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 #Projects {
-  padding: 20px;
-  padding-top: 30px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+  padding: 30px;
   margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(190, 211, 199, 0.5),
+    rgba(56, 79, 66, 0.2)
+  );
 }
 #Projects ul {
   display: grid;
@@ -137,20 +142,27 @@ section {
   justify-content: center;
 }
 #Projects ul li {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3 ease, box-shadow 0.3 ease;
-  width: 100%;
-  max-width: 320px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
   text-align: center;
+  position: relative;
 }
-#Project ul li a {
+#Projects ul li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+#Projects ul li a {
   color: #2d3d44;
-  display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 #Projects ul li a:hover {
   color: #0a549f;
@@ -159,6 +171,16 @@ section {
   margin-top: 10px;
   margin-bottom: 30px;
   text-align: center;
+}
+#Projects ul li .project-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+#Projects ul li:hover .project-description {
+  color: #333;
 }
 #Connect h2 {
   font-size: 30px;
@@ -215,8 +237,39 @@ body.dark-mode nav a:hover {
   color: #1e1e1e;
   border-radius: 5px;
 }
+body.dark-mode #About p {
+  color: rgb(170, 170, 170);
+}
 
-body.dark-mode #Ex erience li {
+body.dark-mode #Projects {
+  background: linear-gradient(
+    135deg,
+    rgba(4, 23, 15, 0.9),
+    rgba(27, 77, 48, 0.8)
+  );
+  color: #f0f0f0;
+}
+body.dark-mode #Projects ul li {
+  background-color: #333;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f0f0f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode #Projects ul li:hover {
+  background-color: #444;
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode #Projects ul li a {
+  color: #f0f0f0;
+}
+body.dark-mode #Projects ul li a:hover {
+  color: #0a549f;
+}
+body.dark-mode #Projects ul li .project-description {
+  color: #bbb;
+}
+body.dark-mode #Exerience li {
   background-color: rgb(74, 74, 74);
   border-color: rgb(42, 98, 61);
   color: #f0f0f0;
@@ -231,7 +284,7 @@ body.dark-mode #Skills li {
   color: #ffffff;
 }
 body.dark-mode h1 {
-  color: 170, 170, 170;
+  color: white;
 }
 body.dark-mode #Connect h2,
 body.dark-mode #Skills h2,
@@ -352,6 +405,19 @@ form button:active {
     padding: 20px;
     margin: 10px;
   }
+  nav {
+    padding: 10px;
+    position: relative;
+  }
+  nav a {
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 5px 0;
+  }
+
   #Projects ul {
     flex-direction: column;
     align-items: center;
@@ -368,6 +434,28 @@ form button:active {
   }
   form button {
     padding: 14px;
+  }
+  #LeaveMessage form {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  #LeaveMessage form input,
+  #LeaveMessage form textarea,
+  #LeaveMessage form button {
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #LeaveMessage form button {
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+  #LeaveMessage h2 {
+    font-size: 24px;
   }
   @media (max-width: 480px) {
     form {
